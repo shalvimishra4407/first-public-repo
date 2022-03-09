@@ -1,0 +1,185 @@
+Note : we can use print_r() and var_dump() to print the output of the array.
+
+print_r(): prints the array or any resource in , readable form it only show the data inside it.
+
+var_dump() : it will dump the entire data about the variable, hence var_dump show the data, called meta data.
+
+var_export: Alias of var_dump(), same as var_dump but it show the representation of the data in more
+ readable , not meta data.
+ 
+ empty definition:- a empty is a value (with no value) having type as string and length as zero , and ordinality 
+ (ascii) as 0.
+ 
+ what is the major different b/w null and undefined variables?
+ 1. $x='a'; isset($x)---->return true
+ 2. echo $x;-print ---- a
+ 
+ if you try these things with a undefined variable.
+$y;
+echo $y; //undefined variable $y.
+since you are printing this with echo you will see nothing var_dump($y); // same error , undefined variable $y 
+but , data type NULL.
+
+isset($y) ; false --> valid ---> $y does not exist at all --> $y is given memory.
+
+
+$z=null; //$z -->momory is allocated
+echo $z; //no error --> no output will be generated
+var_dump($z); // NULL without any error
+isset($z); // false here $z is allocated into memory without any value.
+
+
+unset($y); //deletes from the memory
+echo $y;
+unset($z); //deletes from the memory
+echo $z; undefined variable $z;
+
+var_dump($y); //undefined variable ---NULL
+var_dump($z); //no error -->null
+unset($y);
+ unset($z);
+ var_dump($z);//undefined variable --->null
+ var_dump($y); //undefined variable --->null
+ 
+ 
+ 
+ 
+ 
+ 
+ <?php
+ $conn = mysqli_connect('localhost:3308','root','','');
+ var_dump($conn); #object --->resource
+ ?>
+ 
+ 
+ 
+ <?php 
+// wap in php to show , object using class_alias
+class student{
+	private $name='Awnish';
+	private $class='Btech';
+	private $rollno=1001;
+	private $wife="KATRINA";
+	private $enemy='VICKY KAUSHAL';
+	private $friend='SALMAN';
+	
+}
+$std=new student();
+var_dump($std); //user defined---->type resource
+	
+?>
+
+
+SUPER GLOBAL VARIABLE:- these are special with global context , and scope and these predefined variable by php and it
+has been reserved , for some special purpose.
+
+SUPER Global variables are of two types:-
+1. Mangled Super Global variable.
+2. Non-Mangled Super Global variable.
+
+
+Super Global variables in Generals
+$GLOBALS: NON-Mangled
+$_SERVER :Mangled
+$_GET: Mangled
+$_POST:Mangled
+$_FILES:Mangled
+$_COOKIES: Mangled
+$_SESSION:Mangled
+$_REQUEST:Mangled
+$_ENV:Mangled
+
+
+OTHER SUPER GLOBAL VARIABLES:-
+$http_response_header :non-mangled
+$argc : non-mangled
+$argv : non-mangled
+$php_errormsg : Deprecated
+
+Note :: Mangled: which with $ and _ as prefixed
+this naming convention is called name mangaling same thing is valid in python :__name__,__main__,__init(self)__init
+in javascript : __proto__
+
+
+1.Mangled Super Global Variable : are the variable whose naming convention is such that , they are declared 
+using $ but have _at prefix.
+for eg. : normal variable $name , $class, $_SERVER, $_REQUEST, $_GET, $_POST
+
+2.Non-Mangled Super global variable: are the variable whose naming convention are like normal variables and 
+use no special prefixing like_or__ they can be treated as normal in case naming convention only.
+for eg. $name, $class, $marks, $GLOBALS, $argc, $hhtp_response_header, $php_errormsg
+
+what is different b/w normal variable and super global variable:-
+1.SGV, are predefined but normal variable are used defined.
+2.SGV, have global scope and normal variable have local scope.
+3.normal variable do not have concept of name mangaling but super global variable have.
+
+
+
+$GLOBALS: both SAPI(CGI+CLI)
+$_SERVER : both SAPI(CGI+CLI) but envirnoment dependent.
+$_GET: SAPI :CGI
+$_POST: SAPI : CGI
+$_FILES:SAPI : CGI
+$_COOKIES:SAPI : CGI
+$_SESSION: SAPI : CGI
+$_REQUEST:SAPI : CGI
+$_ENV:SAPI : CGI | CLI
+
+
+OTHER SUPER GLOBAL VARIABLES:-
+$http_response_header : SAPI : CGI
+$argc :  CLI
+$argv :  CLI
+$php_errormsg : BOTH | CGI |CLI
+
+what is SAPI?
+1. SAPI stands for server/system application programming interface. it is, a type of service, which 
+recognises the envirnoment in which execution of the program take place.
+This service is, handled by web-server.
+
+wap in php to show sapi name at diffrent envirnoment .
+ans :consider sapi.php
+
+<?php
+
+echo php_sapi_name();
+?>
+
+1. php sapi.php//cli
+2. php -S localhost:8000//cli-server
+3. apache(laragon)--->http://localhost:786/  //apache2handler
+
+1. what is sapi of $name='RAVI'; ?
+ a)cli
+ b)cgi
+ c)both(correct)
+ d)this is not super-global variable
+ 
+ 2.what is the correct value for $argc when you are running it at url:
+ http://localhost:786/p1.php?
+ 1) 1
+ 2)2
+ 3) 0 (correct)
+ 4) 3
+ 
+ 
+ Command line Argument in php:-
+ ****************************
+ In any programming, language  there are two types of inputs envirnoment .
+ 1.RUNTIME INPUT: inputs are argument supplied during program execution is called as , runtime argument.
+ for example: scanf(), getch(), getc(), getchar()
+ 
+ you can take input from these function , or you can supply the input , in these only when program is running 
+ in primary memory.
+ 2. COMPILE TIME, INPUT OR ARGUMENTS:
+ the arguments supplied  at compile time of the program is called command line arguments.
+ in php we have two super global variable for this.
+ 1.$argc: argument count
+ 2.$argv : argument vector and argument variable.
+ 3. they will under, only sapi mode = cli.
+ 
+ 
+ pic in phone
+
+

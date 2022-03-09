@@ -1,0 +1,60 @@
+<?php
+
+echo 'This is Shalvi Mishra Termial';
+echo PHP_EOL;
+echo 'The Shalvi Framework :Version 1.x';
+echo PHP_EOL;
+$commands=['--help'=>'This is Help Command',
+'--v'=>'1.x',
+'--a'=>'for Addition',
+'--s'=>'for Subtraction',
+'--m'=>'for Multiplication',
+'--d'=>'for Division',
+'--r'=>'for Remainder',
+];
+foreach($commands as $key => $value){
+printf("%s\t:\t%s\n", $key, $value);
+}
+$output='';
+if(isset($argv[1])){
+$command=$argv[1];
+echo "\e[H\e[J";
+switch($command){
+case '--v':
+$output='1.x';
+break;
+case '--a':
+$x = readline('Enter a number 1:');
+$y = readline('Enter a number 2:');
+$output = $x+$y;
+break;
+case '--s':
+$x = readline('Enter a number 1:');
+$y = readline('Enter a number 2:');
+$output = $x-$y;
+break;
+case '--m':
+$x = readline('Enter a number 1:');
+$y = readline('Enter a number 2:');
+$output = $x*$y;
+break;
+case '--d':
+$x = readline('Enter a number 1:');
+$y = readline('Enter a number 2:');
+$output = $x/$y;
+break;
+
+   case '--r':
+      $x = readline('Enter a number 1:');
+      $y = readline('Enter a number 2:');
+      $output = $x%$y;
+      break;
+
+    default:
+       $output='Invalid Command Supplied';
+    break;
+}
+
+}
+echo $output;
+?>

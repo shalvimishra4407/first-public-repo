@@ -1,0 +1,61 @@
+step1: node install
+step2-> Open cmd-> node -v
+step3-> create laravel project
+step4->go inside project folder -> setup database connection
+run initial migration -> php artisan migrate
+->composer require laravel/ui
+php artisan ui bootstrap --auth
+step5->npm install after this final command
+npm run development
+php serve artisan
+
+-----------------------
+How to get a data rollwise(admin/user)
+db::user where roll==user get
+db::table get
+
+@if(url()->current()=='/admin')
+<--add data--->
+@elseif(url()->current()=='/user')
+
+<---user table data--->
+@endif
+
+------------------------------
+
+goto mailtrap.io and create account 
+get the smpt trediatial and copy/paste 
+create a instance variable $details and initial the constructor 
+add the view templates inside resouces/view/email-> create any view
+add this line
+
+create a route and create a new route:-
+route::get('send-mail',function(){
+
+}
+
+
+task :
+
+make a table auther and make two feild title description using core php 
+
+make 10 form 1. checkbox, selectbox, radio, textarea, file, email, password , confirm password, hidden feild,
+readonly feild,
+create a table department insert 5 departments 
+make file cities.php, country.php, course.php
+
+goes to the awnish repo and search every repo og awnish.
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=587
+MAIL_USERNAME=c7bae58614473b
+MAIL_PASSWORD=ac6f9350500ed9
+MAIL_ENCRYPITION=
+
+
+
+
+Create the MAIL CLASS
+php artisan make: mail className 
+

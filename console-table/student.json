@@ -1,0 +1,28 @@
+{
+"collection":"student",
+"author":"archana software engg.",
+"date":"27-jan-2022",
+"author":"10:02:10 Am",
+"data":[
+{
+	"roll":1001,
+	"name":"archana",
+	"marks":90
+},
+{
+	"roll":1002,
+	"name":"archu",
+	"marks":91
+},
+{
+	"roll":1003,
+	"name":"arti",
+	"marks":80
+},
+{
+	"roll":1004,
+	"name":"aruhi",
+	"marks":75
+}
+]
+}

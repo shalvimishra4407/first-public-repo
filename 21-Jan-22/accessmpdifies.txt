@@ -1,0 +1,10 @@
+Access Modifiers:-
+****************
+Access Modifiers are verbs when added before any Instance Variable or method, makes it hidden from the diffrent 
+scopes.
+
+Possible Number of scopes :-
+*************************
+1. From Outside the class
+2. From Inside the class
+3. From Child class

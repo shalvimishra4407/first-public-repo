@@ -1,0 +1,60 @@
+<?php
+$name = $_POST['name'];
+$password = $_POST['password'];
+if(!preg_match("/^[a-zA-Z]*$/",$name)){
+$ErrMsg ="Only alphabets and whitespace are allowed";
+echo $ErrMsg;
+}
+else{
+  echo $name;
+}
+if(!empty($_POST['password']){
+$password = test_input($_POST['password'];
+$cpassword = test_input($_POST['cpassword'];
+if (strlen($_POST['password'])<=8){
+ echo $passwordErr ="Your password must be 8 character";
+}
+elseif(!preg_match("#[0-9]+#", $password)){
+ echo $passwordErr ="Your password must be contain 1 number";
+
+}
+elseif(!preg_match("#[A-Z]+#", $password)){
+echo $passwordErr ="Your password must be contain 1 capital latter";
+
+}
+elseif(!preg_match("#[a-z]+#", $password)){
+echo $passwordErr ="Your password must be contain 1 lowercase latter";
+
+}else{
+ echo $passwordErr = "invalid password !"
+}
+if(isset($_POST['submit']){
+echo "submit button is clicked";
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+echo "DATA IS SENT USING POST method";
+}
+}else{
+"Data is not submitted";
+}
+error_reporting(E_ALL);
+?>
+<html>
+<head>
+</head>
+<body>
+<center>
+<h1>REGISTRATION FORM</h1>
+<form  method="post">
+Name:
+<input type="text" name="name" required><br><br>
+Number:
+<input type="number" name="number"><br><br>
+Email:
+<input type="email" name="email" id="email"><br><br>
+Password:
+<input type="password" name="password" id="password"><br><br>
+<input type="submit" name="submit" value="submit">
+</form>
+</center>
+</body>
+</html>
